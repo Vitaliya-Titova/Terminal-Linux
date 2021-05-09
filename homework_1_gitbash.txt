@@ -1,0 +1,104 @@
+1) Посмотреть где я 
+pwd
+/d
+
+2) Создать папку
+mkdir homework_1
+
+3) Зайти в папку
+cd homework_1
+
+4) Создать 3 папки
+mkdir qa qc testing
+
+5) Зайти в любоую папку
+cd d:/homework_1/qa
+
+6) Создать 5 файлов (3 txt, 2 json)
+touch qa_1.txt qa_2.txt qa_3.txt qa_4.json qa_5.json
+
+7) Создать 3 папки
+mkdir -p {qc_1,qc_2,qc_3}
+
+8. Вывести список содержимого папки
+ls
+qc_1/  qc_2/  qc_3/
+
+9) + Открыть любой txt файл
+vim qa_1.txt
+
+10) + написать туда что-нибудь, любой текст.
+i (insert) helloy!
+
+11) + сохранить и выйти.
+esc :wq
+
+12) Выйти из папки на уровень выше
+cd ..
+
+13) переместить любые 2 файла, которые вы создали, в любую другую папку.
+mv qa_1.txt qa_5.json d:/homework_1/testing
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.
+cp qa_1.txt qa_5.json d:/homework_1/qa
+
+15) Найти файл по имени
+find qa_1.txt
+qa_1.txt
+
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.
+просмотреть содержимое в реальном времени:
+cat qa_1.txt
+helloy!
+
+команда grep:
+вывод содержимого файла по ключевому слову:
+grep helloy qa_1.txt
+helloy!
+
+17) вывести несколько первых строк из текстового файла
+head -2 qa_2.txt
+Quality Assurance
+Quality Assurance serves to ensure that appropriate processes and procedures are in place (and are being adhered to) that enable the delivery of a product or service to an agreed level of quality.
+(-2 количество строк)
+
+18) вывести несколько последних строк из текстового файла
+tail -3 qa_2.txt
+Version control and branching strategy
+Design standards and reviews
+Coding standards, code quality checks and reviews
+(-3 количество строк)
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает.
+less qa_1.txt
+
+
+20) вывести дату и время
+date
+Sun May  9 15:37:52 RTZ 2021
+
+
+
+
+Задание *
+1) Отправить http запрос на сервер.
+https://api.quarantine.country/api/v1/regions
+
+curl https://api.quarantine.country/api/v1/regions
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+preconditions: mkdir query_high
+2.1 
+vim query.sh
+2.2
+i (insert)
+cd query_high
+mkdir app1 app2 app3
+cd d:/homework_1/query_high/app1
+touch file1.txt file2.txt file3.txt file4.json file5.json
+mkdir -p {doc1,doc2,doc3}
+ls
+mv file1.txt file5.json d:/homework_1/query_high/app3
+esc :wq
+2.3 
+запуск query.sh
