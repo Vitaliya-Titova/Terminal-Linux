@@ -1,1 +1,1 @@
-# gr_18
+# Terminal Linuks
